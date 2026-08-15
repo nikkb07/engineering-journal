@@ -35,13 +35,20 @@ export default function ChatWindow() {
   // Auto-scroll reference
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll whenever messages or loading state changes
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-    });
-  }, [messages, loading]);
+// Prevent automatic page scrolling when the assistant first loads
+const hasMounted = useRef(false);
+
+useEffect(() => {
+  if (!hasMounted.current) {
+    hasMounted.current = true;
+    return;
+  }
+
+  messagesEndRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "end",
+  });
+}, [messages]);
 
   async function sendMessage(question?: string) {
     const text = (question ?? input).trim();
