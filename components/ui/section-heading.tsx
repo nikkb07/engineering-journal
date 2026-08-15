@@ -1,5 +1,5 @@
 interface SectionHeadingProps {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description?: string;
   align?: "left" | "center";
@@ -21,9 +21,11 @@ export default function SectionHeading({
           : "max-w-3xl"
       }
     >
-      <p className="text-sm uppercase tracking-[0.35em] text-[var(--accent)]">
-        {eyebrow}
-      </p>
+      {eyebrow && (
+        <p className="text-sm uppercase tracking-[0.35em] text-[var(--accent)]">
+          {eyebrow}
+        </p>
+      )}
 
       <h2 className="mt-5 font-editorial text-6xl leading-none">
         {title}
