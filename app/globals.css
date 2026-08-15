@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* ===========================
+     Ivory Edition
+  =========================== */
+
+  --background: #f7f4ee;
+  --surface: #ffffff;
+  --surface-secondary: #f2eee7;
+
+  --foreground: #111111;
+  --foreground-secondary: #5d6168;
+
+  --border: #e4dfd6;
+
+  --accent: #b68b3a;
+  --accent-foreground: #ffffff;
+
+  --radius: 24px;
+
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 80px rgba(0, 0, 0, 0.12);
+}
+
+.dark {
+  /* ===========================
+     Obsidian Edition
+  =========================== */
+
+  --background: #0c0d0f;
+  --surface: #14161a;
+  --surface-secondary: #1b1d22;
+
+  --foreground: #f7f6f2;
+  --foreground-secondary: #9ba1ab;
+
+  --border: #2a2d33;
+
+  --accent: #d0a85c;
+  --accent-foreground: #111111;
+
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 30px 90px rgba(0, 0, 0, 0.6);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition:
+    background-color 400ms ease,
+    color 400ms ease;
+}
+
+/* ===========================
+   Typography
+=========================== */
+
+.font-editorial {
+  font-family: var(--font-cormorant);
+}
+
+.font-ui {
+  font-family: var(--font-geist-sans);
+}
+
+.font-mono {
+  font-family: var(--font-geist-mono);
+}
+
+/* ===========================
+   Hero Marquee
+=========================== */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 24s linear infinite;
+}
+
+@keyframes background-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+@keyframes background-right {
+  from {
+    transform: translateX(-25%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-background-left {
+  animation: background-left 45s linear infinite;
+}
+
+.animate-background-right {
+  animation: background-right 45s linear infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================================
+   RESPONSIVE FOUNDATION
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}

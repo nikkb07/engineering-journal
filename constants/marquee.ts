@@ -1,0 +1,17 @@
+export const MARQUEE_ITEMS = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Node.js",
+  "Express",
+  "PostgreSQL",
+  "Docker",
+  "Git",
+  "FastAPI",
+  "LangChain",
+  "Python",
+  "AI",
+  "AWS",
+  "REST APIs",
+  "Full Stack",
+];
